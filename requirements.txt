@@ -1,2 +1,4 @@
 netpyne==1.0.2.1
 neurom==3.2.2
+xlrd==2.0.1
+pandas==1.4.2
