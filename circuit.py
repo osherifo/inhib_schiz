@@ -41,14 +41,15 @@ def log(msg):
     f.close()
 
 #Mechanisms and files
-log('Mechanisms found: '+ os.path.isfile('mod/x86_64/special')) if RANK==0 else None
+log('Mechanisms found: '+ str(os.path.isfile('mod/x86_64/special'))) if RANK==0 else None
+print('Mechanisms found: '+ str(os.path.isfile('mod/x86_64/special'))) if RANK==0 else None
 neuron.h('forall delete_section()')
 neuron.load_mechanisms('mod/')
 h.load_file('net_functions.hoc')
 #===========================================================================
 # Simulation, Analysis, and Plotting Controls
 #===========================================================================
-TESTING = False # i.e.g generate 1 cell/pop, with 0.1 s runtime
+TESTING = True # i.e.g generate 1 cell/pop, with 0.1 s runtime
 no_connectivity = False
 
 stimulate = False # Add a stimulus
@@ -110,7 +111,8 @@ for stimulus in circuit_params['STIM_PARAM'].axes[0]:
     new_param['gmax'] = stimuli[-1]['gmax']
     stimuli[-1]['new_param'] = new_param
 COMM.Barrier()
-log('Importing, setting up MPI variables and loading necessary files took ', str((time.perf_counter() - tic_0)/60)[:5], 'minutes') if RANK==0 else None
+log('Importing, setting up MPI variables and loading necessary files took '+ str((time.perf_counter() - tic_0)/60)[:5]+ 'minutes') if RANK==0 else None
+print('Importing, setting up MPI variables and loading necessary files took '+ str((time.perf_counter() - tic_0)/60)[:5]+ 'minutes') if RANK==0 else None
 #################################################################################
 if TESTING:
     OUTPUTPATH = 'Circuit_output_testing'
@@ -294,7 +296,8 @@ if MDD:
                 elif 'PV' in pre or 'VIP' in pre:
                     total += circuit_params["syn_cond"].at[pre, post]*circuit_params["n_cont"].at[pre, post]*circuit_params["conn_probs"].at[pre, post]
             circuit_params['SING_CELL_PARAM'].at['norm_tonic',post] -= circuit_params['SING_CELL_PARAM'].at['norm_tonic',post]*sst/total*0.4
-            log(post, '_tonic reduced by: ', sst/total*100*0.4, '%') if RANK == 0 else None
+            log(post+ '_tonic reduced by: '+ sst/total*100*0.4+ '%') if RANK == 0 else None
+            print(post+ '_tonic reduced by: '+ sst/total*100*0.4+ '%') if RANK == 0 else None
 
 # Generate Populations
 tic = time.perf_counter()
@@ -315,7 +318,8 @@ for cell_name in cell_names:
 
 COMM.Barrier()
 
-log('Instantiating all populations took ', str((time.perf_counter() - tic_0)/60)[:5], 'minutes') if RANK==0 else None
+log('Instantiating all populations took '+ str((time.perf_counter() - tic_0)/60)[:5]+ 'minutes') if RANK==0 else None
+print('Instantiating all populations took '+ str((time.perf_counter() - tic_0)/60)[:5]+ 'minutes') if RANK==0 else None
 
 tic = time.perf_counter()
 
@@ -345,7 +349,8 @@ for i, pre in enumerate(network.population_names):
 
                         syn_pos_args=syn_pos[circuit_params["Syn_pos"].at[pre,post]])
 
-log('Connecting populations took ', str((time.perf_counter() - tic_0)/60)[:5], 'minutes') if RANK==0 else None
+log('Connecting populations took '+ str((time.perf_counter() - tic_0)/60)[:5]+ 'minutes') if RANK==0 else None
+print('Connecting populations took '+ str((time.perf_counter() - tic_0)/60)[:5]+ 'minutes') if RANK==0 else None
 
 # Setup Extracellular Recording Device
 COMM.Barrier()
@@ -371,7 +376,8 @@ elif not rec_LFP and not rec_DIPOLES:
 	  log('Simulating, recording SPIKES ... ') if RANK==0 else None
 	  SPIKES = network.simulate(**simargs)
 
-log('Simulation took ', str((time.perf_counter() - tic_0)/60)[:5], 'minutes') if RANK==0 else None
+log('Simulation took '+ str((time.perf_counter() - tic_0)/60)[:5]+ 'minutes') if RANK==0 else None
+print('Simulation took '+ str((time.perf_counter() - tic_0)/60)[:5]+ 'minutes') if RANK==0 else None
 
 COMM.Barrier()
 if RANK==0:
@@ -380,7 +386,8 @@ if RANK==0:
     np.save(os.path.join(OUTPUTPATH,'SPIKES_Seed'+str(GLOBALSEED)+'.npy'), SPIKES)
     np.save(os.path.join(OUTPUTPATH,'OUTPUT_Seed'+str(GLOBALSEED)+'.npy'), OUTPUT) if rec_LFP else None
     np.save(os.path.join(OUTPUTPATH,'DIPOLEMOMENT_Seed'+str(GLOBALSEED)+'.npy'), DIPOLEMOMENT) if rec_DIPOLES else None
-    log('Saving simulation took', str((time.perf_counter() - tic_0)/60)[:5], 'minutes')
+    log('Saving simulation took'+ str((time.perf_counter() - tic_0)/60)[:5]+ 'minutes')
+    print('Saving simulation took'+ str((time.perf_counter() - tic_0)/60)[:5]+ 'minutes')
 
 #===========================================================================
 # Plotting
@@ -397,4 +404,5 @@ if TESTING:
     log('Test complete, switch TESTING to False for full simulation') if RANK==0 else None
 elif not TESTING:
     log('Simulation complete') if RANK==0 else None
-log('Script completed in ', str((time.perf_counter() - tic_0)/60)[:5], 'minutes') if RANK==0 else None
+log('Script completed in '+ str((time.perf_counter() - tic_0)/60)[:5]+ 'minutes') if RANK==0 else None
+print('Script completed in '+ str((time.perf_counter() - tic_0)/60)[:5]+ 'minutes') if RANK==0 else None

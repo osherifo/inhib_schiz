@@ -24,7 +24,7 @@ import neuron
 from neuron import h, gui
 import LFPy
 from LFPy import NetworkCell, Network, Synapse, RecExtElectrode, StimIntElectrode
-from net_params import *
+#from net_params import *
 import warnings
 warnings.filterwarnings('ignore')
 import pandas as pd
