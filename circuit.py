@@ -243,12 +243,7 @@ def generateSubPop(popsize,mname,popargs,Gou,Gtonic,GtonicApic):
             'pop_args' : popargs,
             'rotation_args' : rotation}
     from datetime import datetime as time
-    t1=time.now()
-    log('creating population')
     network.create_population(**popParams)
-    t2=time.now()
-    log('created population')
-    log(t2-t1 )
     # Add biophys, OU processes, & tonic inhibition to cells
     for cellind in range(0,len(network.populations[mname].cells)):
         rseed = int(local_state.uniform()*SEED)

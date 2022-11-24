@@ -30,6 +30,18 @@ warnings.filterwarnings('ignore')
 import pandas as pd
 import itertools
 
+
+
+#================================================================================
+#= PARAMETERS TO INVESTIGATE
+#================================================================================
+
+cell_indices_to_plot=[0]
+N_cells=1
+
+
+
+
 #================================================================================
 #= Controls
 #================================================================================
@@ -58,8 +70,10 @@ L23_pos = np.array([0., 0., 78200.]) #single dipole refernece for EEG/ECoG
 EEG_sensor = np.array([[0., 0., 90000]])
 ECoG_sensor = np.array([[0., 0., 79000]])
 
-EEG_args = LFPy.FourSphereVolumeConductor(radii, sigmas, EEG_sensor)
-ECoG_args = LFPy.FourSphereVolumeConductor(radii, sigmas, ECoG_sensor)
+r_electrodes=np.array([[0.,0.,90000.],[0.,85000.,0.]])
+
+EEG_args = LFPy.FourSphereVolumeConductor(r_electrodes,radii, sigmas)
+ECoG_args = LFPy.FourSphereVolumeConductor(r_electrodes,radii, sigmas)
 
 sampling_rate = (1/0.025)*1000
 nperseg = int(sampling_rate/2)
@@ -81,15 +95,15 @@ def bandPassFilter(signal,low=.1, high=100.):
 #===============================
 #= Frank
 #===============================
-pop_colors = {'HL23PN1':'k', 'HL23MN1':'red', 'HL23BN1':'green', 'HL23VN1':'yellow'}
-popnames = ['HL23PN1', 'HL23MN1', 'HL23BN1', 'HL23VN1']
+pop_colors = {'HL23PYR':'k', 'HL23SST':'red', 'HL23PV':'green', 'HL23VIP':'yellow'}
+popnames = ['HL23PYR', 'HL23SST', 'HL23PV', 'HL23VIP']
 #===============================
 
 #===============================
 #= Alex
 #===============================
-pop_colors = {'HL23PN1':'k', 'HL23MN1':'crimson', 'HL23BN1':'green', 'HL23VN1':'darkorange'}
-popnames = ['HL23PN1', 'HL23MN1', 'HL23BN1', 'HL23VN1']
+pop_colors = {'HL23PYR':'k', 'HL23SST':'crimson', 'HL23PV':'green', 'HL23VIP':'darkorange'}
+popnames = ['HL23PYR', 'HL23SST', 'HL23PV', 'HL23VIP']
 poplabels = ['PN', 'MN', 'BN', 'VN']
 
 font = {'family' : 'normal',
@@ -208,7 +222,7 @@ def plot_spiketimehists(SPIKES,network):
 def plot_eeg(network,DIPOLEMOMENT):
 	low = .1
 	high = 100
-	DP = DIPOLEMOMENT['HL23PN1']
+	DP = DIPOLEMOMENT['HL23PYR']
 	for pop in popnames[1:]:
 		DP = np.add(DP,DIPOLEMOMENT[pop])
 
@@ -366,21 +380,21 @@ if RANK ==0:
 		fig, fig2 = plot_raster_and_rates(SPIKES,tstart_plot,tstop_plot,popnames,N_cells,network,OUTPUTPATH,GLOBALSEED)
 		fig.savefig(os.path.join(OUTPUTPATH,'raster_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
 		fig2.savefig(os.path.join(OUTPUTPATH,'rates_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
-		fig = plot_spiketimehists(SPIKES,network)
-		fig.savefig(os.path.join(OUTPUTPATH,'spiketimes_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
-	if plotephistimseriesandPSD:
-		fig, fig2 = plot_eeg(network,DIPOLEMOMENT)
-		fig.savefig(os.path.join(OUTPUTPATH,'eeg_filt_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
-		fig2.savefig(os.path.join(OUTPUTPATH,'eeg_raw_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
-		fig, fig2 = plot_lfp(network,OUTPUT)
-		fig.savefig(os.path.join(OUTPUTPATH,'lfps_traces_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
-		fig2.savefig(os.path.join(OUTPUTPATH,'lfps_PSDs_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
+	# 	fig = plot_spiketimehists(SPIKES,network)
+	# 	fig.savefig(os.path.join(OUTPUTPATH,'spiketimes_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
+	# if plotephistimseriesandPSD:
+	# 	fig, fig2 = plot_eeg(network,DIPOLEMOMENT)
+	# 	fig.savefig(os.path.join(OUTPUTPATH,'eeg_filt_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
+	# 	fig2.savefig(os.path.join(OUTPUTPATH,'eeg_raw_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
+	# 	fig, fig2 = plot_lfp(network,OUTPUT)
+	# 	fig.savefig(os.path.join(OUTPUTPATH,'lfps_traces_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
+	# 	fig2.savefig(os.path.join(OUTPUTPATH,'lfps_PSDs_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
 	if plotsomavs:
 		fig = plot_somavs(network,VOLTAGES)
 		fig.savefig(os.path.join(OUTPUTPATH,'somav_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
 #===============================
 # Kant
 #===============================
-pop_colors = {'HL23PN1':'k', 'HL23MN1':'red', 'HL23BN1':'green', 'HL23VN1':'yellow'}
-popnames = ['HL23PN1', 'HL23MN1', 'HL23BN1', 'HL23VN1']
+pop_colors = {'HL23PYR':'k', 'HL23SST':'red', 'HL23PV':'green', 'HL23VIP':'yellow'}
+popnames = ['HL23PYR', 'HL23SST', 'HL23PV', 'HL23VIP']
 #===============================
