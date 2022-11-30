@@ -1,0 +1,112 @@
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f1f4d054e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f1f4d054e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f361b93fe20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f361b93fe20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f0371cc6e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f0371cc6e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fbbd9c39e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fbbd9c39e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f422e79fe20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f422e79fe20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f9a915c3e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f9a915c3e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fb73d103e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fb73d103e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fa327c09e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fa327c09e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fc7176cae20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fc7176cae20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f07867cbe20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f07867cbe20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7ff2c0cace20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7ff2c0cace20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fee08796e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fee08796e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7ff1d4f6ee20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7ff1d4f6ee20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f990f5b2e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f990f5b2e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7feac79eae20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7feac79eae20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7efcc4949e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7efcc4949e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f7e67507e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f7e67507e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f6e19ccfe20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f6e19ccfe20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f06d7c08e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f06d7c08e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f50df8a6e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f50df8a6e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fbbabdf2e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fbbabdf2e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7ffaf38cae20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7ffaf38cae20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f497a619e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f497a619e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f2587e72e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f2587e72e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7ff16ad82e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7ff16ad82e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f4dde334e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f4dde334e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f6e1c3eae20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7f6e1c3eae20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:793: UserWarning: argument delayfun=<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fe890bd4e20> do not appear scipy.stats.rv_continuous or scipy.stats.rv_discrete like and will be deprecated in the future
+  'and will be deprecated in the future')
+/mnt/antares_raid/home/omarsherif/miniconda3/envs/mypython3/lib/python3.7/site-packages/LFPy/network.py:862: UserWarning: multapsefun<built-in method normal of numpy.random.mtrand.RandomState object at 0x7fe890bd4e20> will be deprecated. Use scipy.stats.rv_continuous or scipy.stats.rv_discrete like methods instead
+  'scipy.stats.rv_discrete like methods instead')
