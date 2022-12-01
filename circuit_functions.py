@@ -104,7 +104,7 @@ popnames = ['HL23PYR', 'HL23SST', 'HL23PV', 'HL23VIP']
 #===============================
 pop_colors = {'HL23PYR':'k', 'HL23SST':'crimson', 'HL23PV':'green', 'HL23VIP':'darkorange'}
 popnames = ['HL23PYR', 'HL23SST', 'HL23PV', 'HL23VIP']
-poplabels = ['PN', 'MN', 'BN', 'VN']
+poplabels = ['PYR', 'MSST', 'PV', 'VIP']
 
 font = {'family' : 'normal',
 		'weight' : 'normal',
@@ -391,6 +391,8 @@ if RANK ==0:
 	# 	fig2.savefig(os.path.join(OUTPUTPATH,'lfps_PSDs_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
 	if plotsomavs:
 		fig = plot_somavs(network,VOLTAGES)
+		log('network shape : ' + network.shape)
+		log('voltages shape : ' + VOLTAGES.shape)
 		fig.savefig(os.path.join(OUTPUTPATH,'somav_'+str(GLOBALSEED)),bbox_inches='tight', dpi=300)
 #===============================
 # Kant

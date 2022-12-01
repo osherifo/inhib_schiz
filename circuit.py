@@ -17,12 +17,71 @@ from LFPy import NetworkCell, Network, Synapse, RecExtElectrode, StimIntElectrod
 from matplotlib.collections import PolyCollection
 import matplotlib.pyplot as plt
 import pandas as pd
+import argparse
+
+
 
 #MPI variables:
 COMM = MPI.COMM_WORLD
 SIZE = COMM.Get_size()
 RANK = COMM.Get_rank()
-GLOBALSEED = int(sys.argv[1])
+GLOBALSEED = 1
+
+
+
+def log(msg):
+    f = open("logs/log.log", "a")
+    f.write(str(msg)+"\n")
+    f.close()
+
+
+# Parse Arguments
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--sst',type=str,default='False',help='SST reduced or not')
+parser.add_argument('--sst_percent',type=float,default=40,help='SST reduction percentage')
+parser.add_argument('--pv',type=str,default='False',help='PV reduced or not')
+parser.add_argument('--pv_percent',type=float,default=22,help='PV reduction percentage')
+parser.add_argument('--plot',type=str,default='False',help='Plot graph or not')
+
+
+
+
+
+args = parser.parse_args()
+
+""" ADJUSTABLE PARAMETERS """
+
+MDD = bool(int(args.sst)) #decrease PN GtonicApic and MN2PN weight by 40%
+
+MDD_REDUCTION = args.sst_percent/100
+
+MDD_REDUCTION_INV = 1-MDD_REDUCTION
+
+SCZ = bool(int(args.pv))
+
+SCZ_REDUCTION =  args.pv_percent/100
+
+SCZ_REDUCTION_INV = 1-SCZ_REDUCTION
+
+run_circuit_functions = bool(int(args.plot))
+
+
+if RANK==0:
+    log('SST reduced : ' + str(MDD))
+    if(MDD):
+        log('By : ' + str(MDD_REDUCTION))
+    log('PV reduced : ' + str(SCZ))
+    if(SCZ):
+        log('By : ' + str(SCZ_REDUCTION))
+    log('Plotting : ' + str(run_circuit_functions))
+
+
+
+""" END ADJUSTABLE PARAMETERS """
+
+
 
 # Create new RandomState for each RANK
 SEED = GLOBALSEED*10000
@@ -35,10 +94,7 @@ uniform_rv.random_state = local_state
 #from net_params import *
 
 
-def log(msg):
-    f = open("log.log", "a")
-    f.write(str(msg)+"\n")
-    f.close()
+
 
 #Mechanisms and files
 log('Mechanisms found: '+ str(os.path.isfile('mod/x86_64/special'))) if RANK==0 else None
@@ -49,17 +105,19 @@ h.load_file('net_functions.hoc')
 #===========================================================================
 # Simulation, Analysis, and Plotting Controls
 #===========================================================================
-TESTING = True # i.e.g generate 1 cell/pop, with 0.1 s runtime
+TESTING = False  # i.e.g generate 1 cell/pop, with 0.1 s runtime
 no_connectivity = False
 
 stimulate = False # Add a stimulus
-MDD = False #decrease PN GtonicApic and MN2PN weight by 40%
 DRUG = False
 
 rec_LFP = False #record LFP from center of layer
 rec_DIPOLES = False #record population - wide dipoles
 
-run_circuit_functions = True
+
+# Schiz
+
+
 #===========================================================================
 # Params
 #===========================================================================
@@ -291,8 +349,43 @@ if MDD:
                 elif 'PV' in pre or 'VIP' in pre:
                     total += circuit_params["syn_cond"].at[pre, post]*circuit_params["n_cont"].at[pre, post]*circuit_params["conn_probs"].at[pre, post]
             circuit_params['SING_CELL_PARAM'].at['norm_tonic',post] -= circuit_params['SING_CELL_PARAM'].at['norm_tonic',post]*sst/total*0.4
-            log(post+ '_tonic reduced by: '+ sst/total*100*0.4+ '%') if RANK == 0 else None
-            print(post+ '_tonic reduced by: '+ sst/total*100*0.4+ '%') if RANK == 0 else None
+            log(post+ '_tonic reduced by: '+ str(sst/total*100*0.4)+ '%') if RANK == 0 else None
+            print(post+ '_tonic reduced by: '+ str(sst/total*100*0.4)+ '%') if RANK == 0 else None
+
+# 
+# SCZ
+# 
+
+if SCZ:
+    # synaptic reduction
+    for pre in cell_names:
+        for post in cell_names:
+            if 'PV' in pre:
+                circuit_params["syn_params"][pre+post]["gmax"] = circuit_params["syn_cond"].at[pre, post]*0.88 # Synaptic reduction
+    # tonic reduction
+    for post in cell_names:
+        if 'PYR' in post:
+            circuit_params['SING_CELL_PARAM'].at['apic_tonic',post] = circuit_params['SING_CELL_PARAM'].at['apic_tonic',post]*0.88
+            circuit_params['SING_CELL_PARAM'].at["drug_apic_tonic",post] = circuit_params['SING_CELL_PARAM'].at["drug_apic_tonic",post]*0.88
+        else:
+            pv = 0
+            total = 0
+            for pre in cell_names:
+                if 'PV' in pre:
+                    pv += circuit_params["syn_cond"].at[pre, post]*circuit_params["n_cont"].at[pre,post]*circuit_params["conn_probs"].at[pre, post]
+                    total += circuit_params["syn_cond"].at[pre, post]*circuit_params["n_cont"].at[pre,post]*circuit_params["conn_probs"].at[pre, post]
+                elif 'SST' in pre or 'VIP' in pre:
+                    total += circuit_params["syn_cond"].at[pre, post]*circuit_params["n_cont"].at[pre, post]*circuit_params["conn_probs"].at[pre, post]
+            circuit_params['SING_CELL_PARAM'].at['norm_tonic',post] -= circuit_params['SING_CELL_PARAM'].at['norm_tonic',post]*pv/total*0.22
+            log(post+ '_tonic reduced by: '+ str(pv/total*100*0.22)+ '%') if RANK == 0 else None
+            print(post+ '_tonic reduced by: '+ str(pv/total*100*0.22)+ '%') if RANK == 0 else None
+
+
+# 
+# SCZ
+# 
+
+
 
 # Generate Populations
 tic = time.perf_counter()
