@@ -45,6 +45,9 @@ parser.add_argument('--pv',type=str,default='False',help='PV reduced or not')
 parser.add_argument('--pv_percent',type=float,default=22,help='PV reduction percentage')
 parser.add_argument('--plot',type=str,default='False',help='Plot graph or not')
 
+parser.add_argument('--record_lfp',type=str,default='False',help='Record Local Field Potential or not')
+parser.add_argument('--record_dipole',type=str,default='False',help='Record Dipole Moments or no')
+
 
 
 
@@ -66,6 +69,12 @@ SCZ_REDUCTION =  args.pv_percent/100
 SCZ_REDUCTION_INV = 1-SCZ_REDUCTION
 
 run_circuit_functions = bool(int(args.plot))
+
+rec_LFP = bool(int(args.record_lfp)) #record LFP from center of layer
+
+rec_DIPOLES = bool(int(args.record_dipole)) #record population - wide dipoles
+
+
 
 
 if RANK==0:
@@ -105,14 +114,13 @@ h.load_file('net_functions.hoc')
 #===========================================================================
 # Simulation, Analysis, and Plotting Controls
 #===========================================================================
-TESTING = False  # i.e.g generate 1 cell/pop, with 0.1 s runtime
+TESTING = True # i.e.g generate 1 cell/pop, with 0.1 s runtime
 no_connectivity = False
 
 stimulate = False # Add a stimulus
 DRUG = False
 
-rec_LFP = False #record LFP from center of layer
-rec_DIPOLES = False #record population - wide dipoles
+
 
 
 # Schiz

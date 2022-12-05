@@ -3,12 +3,6 @@ from subprocess import run,Popen
 import streamlit as st
 
 
-
-
-
-
-
-
 # Streamlit 
 
 backend = st.sidebar.radio('Simulation Backend',['Neuron','NetPyNe'])
@@ -16,18 +10,21 @@ backend = st.sidebar.radio('Simulation Backend',['Neuron','NetPyNe'])
 
 pv=st.sidebar.checkbox('Reduce PV')
 
-st.sidebar.write(pv)
 
-pv_percent = st.sidebar.slider('PV Redutcion', 1, 100, 22, 1,disabled = not pv)
+pv_percent = st.sidebar.slider('PV Reduction', 1, 100, 22, 1,disabled = not pv)
 
 sst=st.sidebar.checkbox('Reduce SST')
 
-sst_percent = st.sidebar.slider('SST Redutcion', 1, 100, 40, 1,disabled = not sst)
+sst_percent = st.sidebar.slider('SST Reduction', 1, 100, 40, 1,disabled = not sst)
 
 hostname=run('hostname',capture_output=True).stdout.decode('utf-8')
 
 
 plot=st.sidebar.checkbox('Produce plots')
+
+rec_LFP = st.sidebar.checkbox('Record Local Field Potential')
+rec_DIPOLES = st.sidebar.checkbox('Record Dipole Moments')
+
 
 st.sidebar.caption('running on ' + hostname.strip() + '@ni')
 
@@ -35,10 +32,6 @@ st.title('Modeling Effects of Inhibition on Schizophrenia')
 
 
 col1, col2, col3= st.columns(3)
-
-
-
-
 
 with col1:
     pass
@@ -48,7 +41,7 @@ with col2:
 with col2:
     sim_button=st.button('start simulation')
     if sim_button and (('running_experiment' in st.session_state and not st.session_state.running_experiment) or not 'running_experiment' in st.session_state) :
-        res=Popen(['mpirun','-errfile-pattern','logs/err.log','-n','28','python' ,'./circuit.py'  ,'--sst' ,str(int(sst)) ,'--sst_percent' , str(sst_percent) , '--pv' , str(int(pv)) , '--pv_percent' ,str(pv_percent) , '--plot' ,str(int(plot))] ,text=True)
+        res=Popen(['mpirun','-errfile-pattern','logs/err.log','-n','28','python' ,'./circuit.py'  ,'--sst' ,str(int(sst)) ,'--sst_percent' , str(sst_percent) , '--pv' , str(int(pv)) , '--pv_percent' ,str(pv_percent) , '--plot' ,str(int(plot)) ,'--record_lfp',str(int(rec_LFP)),'--record_dipole',str(int(rec_DIPOLES))] ,text=True)
         
         pid=res.pid
 
@@ -59,27 +52,18 @@ with col2:
         st.session_state.running_experiment=True
 
 
-        
-
     if  'running_experiment' in st.session_state:
         if st.session_state.running_experiment:
 
-
-
             stop_sim_button=st.button('stop simulation')
 
-  
-         
-                
             if stop_sim_button:
 
                 pid=st.session_state.pid
                 Popen(['kill','-9',str(pid)])
                 st.session_state.running_experiment=False
+        
 
-    # if  'running_experiment' in st.session_state:
-    #     if st.session_state.running_experiment:
-    #         st.progress(1)
             
           
         
@@ -87,3 +71,8 @@ with col2:
 
 
 
+
+
+  
+         
+                
